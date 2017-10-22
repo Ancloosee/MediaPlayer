@@ -1,0 +1,115 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:VideoPlayer.View">
+
+
+
+    <Style x:Key="BorderChangeOpacity" TargetType="Border">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="1"></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Opacity" Value="0.5"></Setter>
+                <Setter Property="Margin" Value="5"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBlockBase" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Cooper Black"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+    </Style>
+    <Style x:Key="MusicButtonStyle" BasedOn="{StaticResource BorderChangeOpacity  }" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/MusicIco.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--<Style x:Key="MusicTextStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
+        <Style.Triggers>
+            <Trigger SourceName="MusicButton" Property="IsMouseOver" Value="True">
+                <Setter TargetName="TextBlocks" Property="Visibility" Value="Visible"></Setter>
+                <Setter TargetName="TextBlocks" Property="Text" Value="Music"></Setter>
+            </Trigger>
+        </Style.Triggers>
+        
+    </Style>-->
+
+
+    <Style x:Key="MovieButtonStyle" BasedOn="{StaticResource BorderChangeOpacity  }" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/MoviesIco.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BaseForPlayer" TargetType="Border">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="1"></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Opacity" Value="0.8"></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PlayButtonStyle" BasedOn="{StaticResource BaseForPlayer  }" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/playIco.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="NextButtonStyle" BasedOn="{StaticResource BaseForPlayer  }" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/nextTrackIco.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="PreviousButtonStyle" BasedOn="{StaticResource BaseForPlayer  }" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/previousTrackIco.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="StopButtonStyle" BasedOn="{StaticResource BaseForPlayer  }" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/stop.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MuteButtonStyle" BasedOn="{StaticResource BaseForPlayer  }" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/mute.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PlusAddplaylist" TargetType="Border"  BasedOn="{StaticResource BaseForPlayer}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/plusIco.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MinusAddplaylist" TargetType="Border" BasedOn="{StaticResource BaseForPlayer}">
+        <Setter Property="Background" >
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/minusIco.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

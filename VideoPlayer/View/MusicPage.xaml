@@ -1,0 +1,119 @@
+﻿<Page x:Class="VideoPlayer.View.MusicPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VideoPlayer.View"
+      xmlns:VM="clr-namespace:VideoPlayer.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="500"
+      Title="MusicPage">
+    <Page.DataContext>
+        <VM:MusicPageViewModel></VM:MusicPageViewModel>
+    </Page.DataContext>
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <ToolBar Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8">
+            <Menu>
+                <MenuItem Header="Файл"></MenuItem>
+            </Menu>
+        </ToolBar>
+
+        <!--<Viewbox Grid.Row="0" Grid.RowSpan="5" Grid.Column="0" Grid.ColumnSpan="7">
+        <MediaElement></MediaElement>
+        </Viewbox>-->
+
+
+        <MediaElement LoadedBehavior="Manual" Name="MainPlayer" Source="/1.mp4" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="6" ></MediaElement>
+
+        
+        <TabControl Name="TabControl"  Grid.Row="0" Grid.RowSpan="4" Grid.Column="6" Grid.ColumnSpan="2" MinWidth="50" >
+            <TabControl.Items>
+                <TabItem Name="PlaylistsItem" Header="Плейлисты">
+                    <TreeView Name="PlaylistsItemTreeView" ItemsSource="{Binding MusicPlaylists}">
+                        
+                    </TreeView>
+                </TabItem>
+                <TabItem Header="Обзор" Name="ReviewPCItem">
+                    <TreeView Name="ReviewPCItemTreeView">
+                        
+                    </TreeView>
+                </TabItem>
+            </TabControl.Items>
+        </TabControl>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="1">
+
+            <Viewbox Margin="0,0,5,0">
+                <Border MinHeight="15" MinWidth="15" Style="{StaticResource PlusAddplaylist}"></Border>
+            </Viewbox>
+            <Viewbox Margin="5,0,0,0">
+                <Border MinHeight="15" MinWidth="15" Style="{StaticResource MinusAddplaylist}"></Border>
+            </Viewbox>
+            
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="8" Orientation="Horizontal">
+            <Viewbox >
+                <Border Style="{StaticResource StopButtonStyle}" MinHeight="10" MinWidth="10" Margin="2,2,0,2"></Border>
+            </Viewbox>
+            <Viewbox >
+                <Border Style="{StaticResource PreviousButtonStyle}" MinHeight="10" MinWidth="10" Margin="1"></Border>
+            </Viewbox>
+
+            <Viewbox>
+                <Border Style="{StaticResource PlayButtonStyle}" MinHeight="20" MinWidth="20" ></Border>
+        </Viewbox>
+        <Viewbox >
+            <Border Style="{StaticResource NextButtonStyle}" MinHeight="10" MinWidth="10" Margin="1"></Border>
+        </Viewbox>
+            <Viewbox >
+                <Border Style="{StaticResource MuteButtonStyle}" MinHeight="10" MinWidth="10" Margin="0,2,2,2"></Border>
+            </Viewbox>
+
+            <Slider  HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="30" MinWidth="70" ></Slider>
+            
+        </StackPanel>
+        <!--<Viewbox Grid.Row="5" Grid.Column="2" >
+            <Border Style="{StaticResource PreviousButtonStyle}" MinHeight="10" MinWidth="10" Margin="1"></Border>
+        </Viewbox>
+
+        <Viewbox Grid.Row="5" Grid.Column="3">
+            <Border Style="{StaticResource PlayButtonStyle}" MinHeight="20" MinWidth="20" ></Border>
+        </Viewbox>
+        <Viewbox Grid.Row="5" Grid.Column="4">
+            <Border Style="{StaticResource NextButtonStyle}" MinHeight="10" MinWidth="10" Margin="1"></Border>
+        </Viewbox>-->
+        <!--<Viewbox Grid.Row="5" Grid.Column="2" >
+            <Border Style="{StaticResource PreviousButtonStyle}" MinHeight="10" MinWidth="10" Margin="1"></Border>
+        </Viewbox>
+
+        <Viewbox Grid.Row="5" Grid.Column="3">
+            <Border Style="{StaticResource PlayButtonStyle}" MinHeight="20" MinWidth="20" ></Border>
+        </Viewbox>
+        <Viewbox Grid.Row="5" Grid.Column="4">
+            <Border Style="{StaticResource NextButtonStyle}" MinHeight="10" MinWidth="10" Margin="1"></Border>
+        </Viewbox>-->
+        <!--<Border Grid.Row="5" Grid.Column="2" Style="{StaticResource PreviousButtonStyle}" MinHeight="10" MinWidth="10" Margin="5"></Border>
+        <Border Grid.Row="5" Grid.Column="3" Style="{StaticResource PlayButtonStyle}" MinHeight="20" MinWidth="20" ></Border>
+        <Border Grid.Row="5" Grid.Column="4" Style="{StaticResource NextButtonStyle}" MinHeight="10" MinWidth="10" Margin="5"></Border>-->
+    </Grid>
+</Page>
